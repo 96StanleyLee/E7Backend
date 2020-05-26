@@ -3,6 +3,7 @@ class HerosController < ApplicationController
 
     def index
         heros = Hero.all
+        heros = heros.sort_by(&:id)
         render json: heros
     end
 

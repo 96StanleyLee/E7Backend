@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
     allow do
-      origins 'localhost:3001'
+      origins '*'
   
       resource '*',
         headers: :any,
@@ -15,12 +15,12 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
         methods: [:get, :post, :put, :patch, :delete, :options, :head]
     end
 
-    allow do
-      origins 'https://nifty-pike-99c3ce.netlify.app/'
+    # allow do
+    #   origins 'https://nifty-pike-99c3ce.netlify.app'
   
-      resource '*',
-        headers: :any,
-        credentials: true,
-        methods: [:get, :post, :put, :patch, :delete, :options, :head]
-    end
+    #   resource '*',
+    #     headers: :any,
+    #     credentials: true,
+    #     methods: [:get, :post, :put, :patch, :delete, :options, :head]
+    # end
   end

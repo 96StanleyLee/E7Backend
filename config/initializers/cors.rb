@@ -14,4 +14,13 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
         credentials: true,
         methods: [:get, :post, :put, :patch, :delete, :options, :head]
     end
+
+    allow do
+      origins 'nifty-pike-99c3ce.netlify.app'
+  
+      resource '*',
+        headers: :any,
+        credentials: true,
+        methods: [:get, :post, :put, :patch, :delete, :options, :head]
+    end
   end
